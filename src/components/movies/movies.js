@@ -1,12 +1,38 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { StyledHome } from "./home.styled";
-import { SelectWrapper } from "../../shared/select.styled";
+import { SelectWrapper } from "./home.styled";
 
 import useGenresQuery from "./services/useGenresQuery";
-import Genres from "./genres";
+
 import DiscoverMovies from "./discoverMovies";
-import SortMovies from "./sortMovies";
+import Select from "../../shared/components/select";
+
+
+const sortMoviesOption = [
+  {
+    id: "popularity.desc",
+    name : "Popularity Desc."
+  },
+  {
+    id: "popularity.asc",
+    name : "Popularity Asc."
+  },
+  {
+    id: "original_title.desc",
+    name : "Title Desc."
+  },
+  {
+    id: "release_date.desc",
+    name : "Release date Desc."
+  },
+  {
+    id: "release_date.asc",
+    name : "Release date Asc."
+  },
+  
+]
+
 
 const Movies = () => {
   const pageParams = useParams().page;
@@ -25,8 +51,8 @@ const Movies = () => {
   return (
     <StyledHome>
       <SelectWrapper>
-        <Genres data={data} handleGenre={handleGenre} />
-        <SortMovies handleSortByValue={handleSortByValue} />
+     <Select onChange={handleGenre} options={data} />
+     <Select onChange={handleSortByValue} options={sortMoviesOption} />
       </SelectWrapper>
       <DiscoverMovies
         genres={data}
