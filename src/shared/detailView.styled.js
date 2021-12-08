@@ -43,9 +43,28 @@ export const MovieDetailsImgContainer = styled.div`
 
 export const InfoContainer = styled.div`
   width: 50%;
+  /*   white-space: nowrap;
+  overflow: hidden; */
   @media (max-width: 768px) {
     width: 266.797px;
   }
+`;
+
+export const BiographyEllipsis = styled.p`
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+
+export const AverageVotesContainer = styled.div`
+  display: flex;
+  align-items: center;
+  height: 10px;
+  height: 10px;
+  width: 69px;
+  justify-content: space-around;
 `;
 /* export const DetaildInfoContainer = styled.div`
   display: flex;

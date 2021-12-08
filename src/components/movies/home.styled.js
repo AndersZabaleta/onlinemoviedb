@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 export const StyledHome = styled.div`
   display: flex;
   flex-direction: column;
@@ -8,7 +7,17 @@ export const StyledHome = styled.div`
 `;
 
 export const CardTitle = styled.h1`
-  font-size: 12px;
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.2rem;
+  margin: 0;
+  /* background: white; */
+
+  background-color: transparent;
 `;
 
 export const HomeContainer = styled.div`
@@ -26,6 +35,7 @@ export const MovieCard = styled.div`
   display: flex;
   flex-direction: column;
   width: 300px;
+
   align-items: center;
   justify-content: center;
   margin: 10px;
@@ -36,4 +46,9 @@ export const MovieCard = styled.div`
   &:hover {
     background-color: #e0b416;
   }
+`;
+
+export const CardImage = styled.img`
+  width: 200px !important;
+  height: 300px;
 `;

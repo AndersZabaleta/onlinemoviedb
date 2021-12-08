@@ -1,7 +1,8 @@
 import { useParams, Navigate } from "react-router-dom";
 import useMovieDetailsQuery from "./services/useMovieDetailsQuery";
 import MovieCast from "./movieCast";
-
+import { ReactComponent as Star } from "../../shared/star.svg";
+import { GenresContainer, GenresSpan } from "../../shared/genres.styled";
 import {
   MovieDetailsPage,
   MovieDetailsContainerContainer,
@@ -9,6 +10,7 @@ import {
   MovieDetailsImgContainer,
   InfoContainer,
   DetaildInfoImage,
+  AverageVotesContainer,
 } from "../../shared/detailView.styled";
 const MovieDetails = () => {
   const { id } = useParams();
@@ -32,10 +34,18 @@ const MovieDetails = () => {
             <p>Overview: {data.overview}</p>
             <p>Release date: {data.release_date}</p>
             <div>
-              <p>Votes: {data.vote_average}/10</p>
+              <AverageVotesContainer>
+                <Star />
+                <p>{data.vote_average}/10</p>
+              </AverageVotesContainer>
               <p>Total votes: {data.vote_count}</p>
               <p>Popularity: {data.popularity}</p>
               <p>Runtime: {data.runtime}'</p>
+              <GenresContainer>
+                {data.genres.map((genre) => {
+                  return <GenresSpan>{genre.name}</GenresSpan>;
+                })}
+              </GenresContainer>
             </div>
           </InfoContainer>
         </MovieDetailsContainer>

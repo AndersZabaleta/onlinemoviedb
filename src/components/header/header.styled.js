@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 export const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -23,4 +23,9 @@ export const HeaderElementContainer = styled.div`
   @media (max-width: 768px) {
     display: none;
   }
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: white;
 `;

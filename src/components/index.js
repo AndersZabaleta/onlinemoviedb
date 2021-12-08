@@ -1,6 +1,8 @@
 import Header from "./header";
-import Home from "./home";
+import Movies from "./movies";
 import MovieDetails from "./movieDetails";
-import Home2 from "./discoverMovies";
-/* import DiscoverMovies from "./discoverMovies"; */
-export { Header, Home, MovieDetails, Home2 /* DiscoverMovies */ };
+import Home from "./home";
+import NotFound from "./notFound";
+import PeopleDetails from "./peopleDetails";
+
+export { Header, Movies, MovieDetails, Home, NotFound, PeopleDetails };
