@@ -11,8 +11,8 @@ import styled from "styled-components";
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: white;
-  /*   width: 100%; */
+  color: black;
+  
 `;
 
 const Home = () => {
@@ -40,7 +40,7 @@ const Home = () => {
                   <img
                     src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
                     alt={movie.title}
-                    /*  style={{ width: "100%" }} */
+                
                   />
                 ) : (
                   <img
@@ -50,9 +50,9 @@ const Home = () => {
                   />
                 )}
 
-                <Link to={`/m/details/${movie.id}`}>
+              
                   <CardTitle>{movie.original_title}</CardTitle>
-                </Link>
+              
               </MovieCard>
             </StyledLink>
           );

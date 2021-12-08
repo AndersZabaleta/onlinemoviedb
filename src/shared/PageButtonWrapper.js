@@ -48,9 +48,9 @@ const StyledNextPrevButtons = styled.button`
 `;
 
 const StyledNextPrevButtonsWrapper = styled.div`
-display: "flex",
-          justifyContent: "start",
-          width: "50%",
+          display: "flex";
+          justify-ontent: "start";
+          width: "50%":
 `;
 
 const PageButtonWrapper = ({ currentPage, handlePage, totalPages }) => {
@@ -127,7 +127,6 @@ const PageButtonWrapper = ({ currentPage, handlePage, totalPages }) => {
                     </span>
                   );
                 }
-
                 return (
                   <li key={index}>
                     <Link to={`/discover/page/${page}`}>
