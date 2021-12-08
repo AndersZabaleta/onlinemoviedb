@@ -52,3 +52,14 @@ export const CardImage = styled.img`
   width: 200px !important;
   height: 300px;
 `;
+
+export const SelectWrapper = styled.div`
+  width: 80%;
+  margin: 10px 0px 10px 0px;
+  display: flex;
+  justify-content: space-evenly;
+  @media (max-width: 820px) {
+    flex-direction: column;
+    width: 30%;
+  }
+`;
