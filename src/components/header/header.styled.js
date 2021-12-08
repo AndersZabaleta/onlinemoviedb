@@ -20,9 +20,7 @@ export const HeaderElement = styled.div`
 export const HeaderElementContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
-  @media (max-width: 768px) {
-    display: none;
-  }
+  
 `;
 
 export const StyledLink = styled(Link)`
