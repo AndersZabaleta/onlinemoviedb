@@ -4,6 +4,7 @@ export const DetailInfoContainerContainer = styled.div`
   height: 100vh;
   display: flex;
   justify-content: center;
+  color: white;
   background-color: rgb(31, 31, 31);
   @media (max-width: 540px) {
     font-size: 12px;

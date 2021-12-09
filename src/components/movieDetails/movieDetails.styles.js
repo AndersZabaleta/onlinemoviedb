@@ -1,12 +1,5 @@
 import styled from "styled-components";
 
-export const MovieDetailsPage = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  color: white;
-`;
 export const MovieDetailsContainerContainer = styled.div`
   width: 100%;
   height: 100vh;
@@ -57,13 +50,4 @@ export const AverageVotesContainer = styled.div`
   height: 10px;
   width: 69px;
   justify-content: space-around;
-`;
-
-export const TableWrapper = styled.div`
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  @media (max-width: 768px) {
-    width: 100%;
-  }
 `;

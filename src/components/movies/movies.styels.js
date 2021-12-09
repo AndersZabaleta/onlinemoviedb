@@ -1,4 +1,16 @@
 import styled from "styled-components";
+export const HomeContainer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+`;
+export const MovieCardsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 80%;
+`;
+
 export const StyledHome = styled.div`
   display: flex;
   flex-direction: column;
@@ -34,20 +46,8 @@ export const CardTitle = styled.h1`
   background-color: transparent;
 `;
 
-export const HomeContainer = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: center;
-`;
-export const MovieCardsContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  width: 80%;
-`;
-
 export const CardImage = styled.img`
-  width: 200px !important;
+  width: 200px;
   height: 300px;
 `;
 
