@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 
 const getPopular = async (genre, page, sortByValue) =>
   fetch(
-    `https://api.themoviedb.org/3/discover/movie?api_key=fdca631f4b9babbd32b6f8487c1dfad1&language=en-US&sort_by=${sortByValue}&include_adult=false&include_video=false&page=${page}&with_genres=${genre}&with_watch_monetization_types=flatrate`
+    `${process.env.REACT_APP_API_URL}discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=${sortByValue}&include_adult=false&include_video=false&page=${page}&with_genres=${genre}&with_watch_monetization_types=flatrate`
   ).then((res) => res.json());
 
 const mapData = (data, NUMBER_OF_RESULTS, genres) => {

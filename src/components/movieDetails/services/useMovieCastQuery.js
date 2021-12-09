@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 
 const getMovieCast = async (id) =>
   fetch(
-    `https://api.themoviedb.org/3/movie/${id}/credits?api_key=fdca631f4b9babbd32b6f8487c1dfad1&language=en-US`
+    `${process.env.REACT_APP_API_URL}movie/${id}/credits?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
   ).then((res) => res.json());
 
 const mapData = (data) => {
