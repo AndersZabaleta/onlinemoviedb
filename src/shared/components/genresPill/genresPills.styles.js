@@ -1,18 +1,15 @@
 import styled from "styled-components";
-
-export const Pill = styled.div`
+import { PILL_SIZES } from "./genresPill";
+export const Pill = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   border: 1px solid black;
   border-radius: 8px;
   text-align: center;
-  font-size: ${({ pillSize }) => (pillSize === "S" ? "8px" : "12px")};
-  height: ${({ pillSize }) => (pillSize === "S" ? "15px" : "23px")};
-  width: 23%;
+  font-size: ${({ pillSize }) => (pillSize === PILL_SIZES.S ? "12px" : "15px")};
+  height: ${({ pillSize }) => (pillSize === PILL_SIZES.S ? "18px" : "23px")};
+  width: 100px;
   font-weight: bold;
   margin: 2px;
   &:hover {

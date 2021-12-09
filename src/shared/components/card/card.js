@@ -27,7 +27,7 @@ const Card = ({ imgUrl, name, genres, objectId }) => {
       <PillsContainer>
         {genres.map((genre) => {
           return (
-            <GenresPill key={genre.id} pillSize={"S"} genreName={genre.name} />
+            <GenresPill key={genre.id}  genreName={genre.name} />
           );
         })}
       </PillsContainer>

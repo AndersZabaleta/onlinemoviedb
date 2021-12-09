@@ -1,9 +1,14 @@
 import { Pill } from "./genresPills.styles";
 
-const GenresPill = ({ genreName, pillSize }) => {
+export const PILL_SIZES = {
+  S: "S",
+  L: "L" 
+}
+
+const GenresPill = ({ genreName, pillSize = "S" }) => {
   return (
     <Pill pillSize={pillSize}>
-      <p>{genreName}</p>
+     {genreName}
     </Pill>
   );
 };
