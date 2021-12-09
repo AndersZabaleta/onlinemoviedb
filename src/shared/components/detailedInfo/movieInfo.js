@@ -24,11 +24,12 @@ const MovieInfo = ({
         <p>Total votes: {voteCount}</p>
         <p>Popularity: {popularity}</p>
         <p>Runtime: {runtime}'</p>
-        {/*   <GenresContainer> */}
+
         {genres.map((genre) => {
-          return <GenresPill genreName={genre.name} pillSize={"L"} />;
+          return (
+            <GenresPill key={genre.id} genreName={genre.name} pillSize={"L"} />
+          );
         })}
-        {/*  </GenresContainer> */}
       </div>
     </InfoContainer>
   );

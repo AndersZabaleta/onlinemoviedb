@@ -6,6 +6,7 @@ const TableBody = ({ data, dataType }) => {
       {data.map((tr, index) => {
         return (
           <TableTr
+            key={tr.id}
             tableImage={dataType === "movie" ? tr.profile_path : tr.poster_path}
             name={dataType === "movie" ? tr.name : tr.title}
             character={tr.character}

@@ -23,6 +23,7 @@ const Home = () => {
         {data.map((movie) => {
           return (
             <Card
+              key={movie.id}
               imgUrl={movie.poster_path}
               name={movie.original_title}
               genres={movie.genres ? movie.genres : []}

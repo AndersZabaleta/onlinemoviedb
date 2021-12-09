@@ -26,7 +26,9 @@ const Card = ({ imgUrl, name, genres, objectId }) => {
       </StyledLink>
       <PillsContainer>
         {genres.map((genre) => {
-          return <GenresPill pillSize={"S"} genreName={genre.name} />;
+          return (
+            <GenresPill key={genre.id} pillSize={"S"} genreName={genre.name} />
+          );
         })}
       </PillsContainer>
     </StyledCard>
