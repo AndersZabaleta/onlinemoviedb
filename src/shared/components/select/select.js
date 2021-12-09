@@ -1,4 +1,4 @@
-import { DropdownWrapper, DropDown, SelectSpan } from "./select.styled";
+import { DropdownWrapper, DropDown, SelectSpan } from "./select.styles";
 
 const Select = ({ onChange, options, span, selectedOption }) => {
   return (
@@ -8,7 +8,7 @@ const Select = ({ onChange, options, span, selectedOption }) => {
         {options.map((option) => {
           return (
             <option
-              selected={option.id == selectedOption}
+              selected={option.id === selectedOption}
               key={option.id}
               value={option.id}
             >

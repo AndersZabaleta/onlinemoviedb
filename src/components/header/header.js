@@ -1,10 +1,10 @@
+import { useLocation } from "react-router-dom";
 import {
   HeaderWrapper,
   HeaderElement,
   HeaderElementContainer,
   StyledLink,
-} from "./header.styled";
-import { useLocation } from "react-router-dom";
+} from "./header.styles";
 
 const Header = () => {
   const location = useLocation().pathname;

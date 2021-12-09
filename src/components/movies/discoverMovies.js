@@ -1,8 +1,8 @@
 import { useState } from "react";
-import PageButtonWrapper from "../../shared/PageButtonWrapper";
+import Pagination from "../../shared/pagination";
 import usePopularQuery from "./services/useDiscoverQuery";
 import Card from "../../shared/components/card";
-import { HomeContainer, MovieCardsContainer } from "./home.styled";
+import { HomeContainer, MovieCardsContainer } from "./movies.styels";
 
 const NUMBER_OF_RESULTS = 20;
 
@@ -38,13 +38,13 @@ const DiscoverMovies = ({ genre, pageParams, sortByValue, genres }) => {
           })}
         </MovieCardsContainer>
       </HomeContainer>
-      <PageButtonWrapper
+      <Pagination
         currentPage={parseInt(pageParams)}
-        handlePage={handlePage}
+        onClick={handlePage}
         totalPages={totalPages}
         genre={genre}
         sortByValue={sortByValue}
-      ></PageButtonWrapper>
+      ></Pagination>
     </>
   );
 };

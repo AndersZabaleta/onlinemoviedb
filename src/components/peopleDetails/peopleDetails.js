@@ -1,8 +1,8 @@
 import { useParams, Navigate } from "react-router-dom";
 import usePeopleDetailsQuery from "./services/usePeopleDetailsQuery";
 import DetailedInfo from "../../shared/components/detailedInfo";
-import { MovieDetailsPage } from "../../shared/detailView.styled";
 import KnownFor from "./knownFor";
+import { DetailPage } from "../../shared/common/styles";
 const PeopleDetails = () => {
   const { id } = useParams();
   const { isLoading, data } = usePeopleDetailsQuery(id);
@@ -10,7 +10,7 @@ const PeopleDetails = () => {
   if (isLoading) return "Loading...";
   if (data.status_code) return <Navigate to="/404" />;
   return (
-    <MovieDetailsPage>
+    <DetailPage>
       <DetailedInfo
         infoType="people"
         infoImg={data.profile_path}
@@ -23,7 +23,7 @@ const PeopleDetails = () => {
       />
 
       <KnownFor id={id} />
-    </MovieDetailsPage>
+    </DetailPage>
   );
 };
 

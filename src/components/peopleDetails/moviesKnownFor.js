@@ -1,7 +1,5 @@
-import { TableWrapper } from "../../shared/detailView.styled";
-
 import Table from "../../shared/components/table";
-
+import { TableWrapper } from "../../shared/common/styles";
 const MoviesKnownFor = ({ data, isLoading }) => {
   if (isLoading) return "Loading...";
   return (

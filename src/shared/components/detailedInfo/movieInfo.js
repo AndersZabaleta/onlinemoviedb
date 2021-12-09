@@ -1,10 +1,10 @@
+import { ReactComponent as Star } from "../../star.svg";
+import GenresPill from "../genresPill/genresPill";
 import {
   InfoContainer,
   AverageVotesContainer,
   PillsContainer,
 } from "./movieInfo.styles";
-import { ReactComponent as Star } from "../../star.svg";
-import GenresPill from "../genresPill/genresPill";
 const MovieInfo = ({
   name,
   description,

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 import useGenresQuery from "./services/useGenresQuery";
@@ -6,7 +5,7 @@ import useGenresQuery from "./services/useGenresQuery";
 import DiscoverMovies from "./discoverMovies";
 import Select from "../../shared/components/select";
 
-import { SelectWrapper, StyledHome } from "./home.styled";
+import { SelectWrapper, StyledHome } from "./movies.styels";
 
 const sortMoviesOption = [
   {
@@ -36,14 +35,13 @@ const sortMoviesOption = [
 ];
 
 const Movies = () => {
-  const pageParams = useParams().page;
-  const genre = useParams().genre;
-  const sortByValue = useParams().sortValue;
+  const { page, genre, sortValue } = useParams();
+
   const navigate = useNavigate();
 
   const { isLoading, data } = useGenresQuery();
   const handleGenre = (e) => {
-    navigate(`/discover/genre=${e.target.value}/sort_by=${sortByValue}/page/1`);
+    navigate(`/discover/genre=${e.target.value}/sort_by=${sortValue}/page/1`);
   };
   const handleSortByValue = (e) => {
     navigate(`/discover/genre=${genre}/sort_by=${e.target.value}/page/1`);
@@ -59,7 +57,7 @@ const Movies = () => {
           span={"Genre"}
         />
         <Select
-          selectedOption={sortByValue}
+          selectedOption={sortValue}
           onChange={handleSortByValue}
           options={sortMoviesOption}
           span={"Sort by"}
@@ -68,8 +66,8 @@ const Movies = () => {
       <DiscoverMovies
         genres={data}
         genre={genre}
-        pageParams={pageParams}
-        sortByValue={sortByValue}
+        pageParams={page}
+        sortByValue={sortValue}
       />
     </StyledHome>
   );
