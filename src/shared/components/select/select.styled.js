@@ -1,12 +1,9 @@
 import styled from "styled-components";
 
 export const DropdownWrapper = styled.div`
-  background-color: transparent;
+  background-color: white;
   border: 1px solid black;
   border-radius: 10px;
-  &:hover {
-    background-color: white;
-  }
   @media (max-width: 820px) {
     margin: 10px 0px 10px 0px;
   }
@@ -25,5 +22,3 @@ export const SelectSpan = styled.span`
   margin-right: 5px;
   width: 29%;
 `;
-
-

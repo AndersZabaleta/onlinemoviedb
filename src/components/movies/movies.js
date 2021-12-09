@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import useGenresQuery from "./services/useGenresQuery";
 
@@ -22,6 +22,10 @@ const sortMoviesOption = [
     name: "Title Desc.",
   },
   {
+    id: "original_title.asc",
+    name: "Title Asc.",
+  },
+  {
     id: "release_date.desc",
     name: "Release date Desc.",
   },
@@ -33,23 +37,33 @@ const sortMoviesOption = [
 
 const Movies = () => {
   const pageParams = useParams().page;
-
-  const [genre, setGenre] = useState("28");
-  const [sortByValue, setSortByValue] = useState("popularity.desc");
+  const genre = useParams().genre;
+  const sortByValue = useParams().sortValue;
+  const navigate = useNavigate();
 
   const { isLoading, data } = useGenresQuery();
   const handleGenre = (e) => {
-    setGenre(e.target.value);
+    navigate(`/discover/genre=${e.target.value}/sort_by=${sortByValue}/page/1`);
   };
   const handleSortByValue = (e) => {
-    setSortByValue(e.target.value);
+    navigate(`/discover/genre=${genre}/sort_by=${e.target.value}/page/1`);
   };
   if (isLoading) return null;
   return (
     <StyledHome>
       <SelectWrapper>
-        <Select onChange={handleGenre} options={data} />
-        <Select onChange={handleSortByValue} options={sortMoviesOption} />
+        <Select
+          selectedOption={parseInt(genre)}
+          onChange={handleGenre}
+          options={data}
+          span={"Genre"}
+        />
+        <Select
+          selectedOption={sortByValue}
+          onChange={handleSortByValue}
+          options={sortMoviesOption}
+          span={"Sort by"}
+        />
       </SelectWrapper>
       <DiscoverMovies
         genres={data}

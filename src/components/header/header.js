@@ -1,4 +1,3 @@
-
 import {
   HeaderWrapper,
   HeaderElement,
@@ -6,7 +5,6 @@ import {
   StyledLink,
 } from "./header.styled";
 import { useLocation } from "react-router-dom";
-
 
 const Header = () => {
   const location = useLocation().pathname;
@@ -17,7 +15,7 @@ const Header = () => {
         <HeaderElement current={location === "/"}>home</HeaderElement>
       </StyledLink>
       <HeaderElementContainer>
-        <StyledLink to="/discover/page/1">
+        <StyledLink to="/discover/genre=28/sort_by=popularity.desc/page/1">
           <HeaderElement current={location.includes("discover")}>
             Discover Movies
           </HeaderElement>

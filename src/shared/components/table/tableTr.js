@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
 import { Tr, Td, TableImg } from "./table.styles";
-const TableTr = ({ tableImage, name, character, index, id }) => {
+const TableTr = ({
+  tableImage,
+  name,
+  character,
+  index,
+  id,
+  tableLinkValue,
+}) => {
   return (
     <Tr backgroundColor={index % 2 === 0 ? "#FDFDFD" : "#F5F5F5"}>
       <Td>
@@ -19,7 +26,7 @@ const TableTr = ({ tableImage, name, character, index, id }) => {
         </Link>
       </Td>
       <Td>
-        <Link to={`/p/details/${id}`}>{name} </Link>
+        <Link to={`/${tableLinkValue}/details/${id}`}>{name} </Link>
       </Td>
       <Td>{character}</Td>
     </Tr>

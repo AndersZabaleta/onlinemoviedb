@@ -1,7 +1,7 @@
 import { useParams, Navigate } from "react-router-dom";
 import useMovieDetailsQuery from "./services/useMovieDetailsQuery";
 import MovieCast from "./movieCast";
-import DetailedInfo from "../../shared/components/detailedInfo/detailedInfo";
+import DetailedInfo from "../../shared/components/detailedInfo";
 import { MovieDetailsPage } from "../../shared/detailView.styled";
 const MovieDetails = () => {
   const { id } = useParams();

@@ -1,6 +1,6 @@
 import TableBody from "./tableBody";
 import { StyledTable, Tr, Th, Thead } from "./table.styles";
-const Table = ({ data, dataType }) => {
+const Table = ({ data, dataType, tableLinkValue }) => {
   return (
     <StyledTable>
       <Thead>
@@ -10,7 +10,11 @@ const Table = ({ data, dataType }) => {
           <Th>Character</Th>
         </Tr>
       </Thead>
-      <TableBody data={data} dataType={dataType} />
+      <TableBody
+        tableLinkValue={tableLinkValue}
+        data={data}
+        dataType={dataType}
+      />
     </StyledTable>
   );
 };

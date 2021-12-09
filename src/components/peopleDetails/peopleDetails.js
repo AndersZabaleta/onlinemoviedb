@@ -1,6 +1,6 @@
 import { useParams, Navigate } from "react-router-dom";
 import usePeopleDetailsQuery from "./services/usePeopleDetailsQuery";
-import DetailedInfo from "../../shared/components/detailedInfo/detailedInfo";
+import DetailedInfo from "../../shared/components/detailedInfo";
 import { MovieDetailsPage } from "../../shared/detailView.styled";
 import KnownFor from "./knownFor";
 const PeopleDetails = () => {

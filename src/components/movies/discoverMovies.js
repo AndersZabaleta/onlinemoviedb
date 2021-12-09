@@ -1,16 +1,16 @@
 import { useState } from "react";
 import PageButtonWrapper from "../../shared/PageButtonWrapper";
 import usePopularQuery from "./services/useDiscoverQuery";
-import Card from "../../shared/components/card/card";
+import Card from "../../shared/components/card";
 import { HomeContainer, MovieCardsContainer } from "./home.styled";
 
 const NUMBER_OF_RESULTS = 20;
 
 const DiscoverMovies = ({ genre, pageParams, sortByValue, genres }) => {
-  const [page, setPage] = useState(pageParams ? pageParams : 1);
+  const [page, setPage] = useState(pageParams);
   const { isLoading, error, data, totalPages } = usePopularQuery(
     genre,
-    pageParams ? pageParams : page,
+    pageParams,
     sortByValue,
     NUMBER_OF_RESULTS,
     genres
@@ -39,9 +39,11 @@ const DiscoverMovies = ({ genre, pageParams, sortByValue, genres }) => {
         </MovieCardsContainer>
       </HomeContainer>
       <PageButtonWrapper
-        currentPage={parseInt(page)}
+        currentPage={parseInt(pageParams)}
         handlePage={handlePage}
         totalPages={totalPages}
+        genre={genre}
+        sortByValue={sortByValue}
       ></PageButtonWrapper>
     </>
   );

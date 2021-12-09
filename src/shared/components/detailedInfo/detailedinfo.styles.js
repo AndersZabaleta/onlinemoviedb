@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export const MovieDetailsContainerContainer = styled.div`
+export const DetailInfoContainerContainer = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
@@ -12,7 +12,7 @@ export const MovieDetailsContainerContainer = styled.div`
     font-size: 10px;
   }
 `;
-export const MovieDetailsContainer = styled.div`
+export const DetailInfoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,30 +22,13 @@ export const MovieDetailsContainer = styled.div`
     align-items: center;
   }
 `;
-export const MovieDetailsImgContainer = styled.div`
+export const DetailImgContainer = styled.div`
   display: flex;
   width: 50%;
   justify-content: center;
   @media (max-width: 768px) {
     width: 80%;
   }
-`;
-
-export const InfoContainer = styled.div`
-  width: 50%;
-
-  @media (max-width: 768px) {
-    width: 266.797px;
-  }
-`;
-
-export const AverageVotesContainer = styled.div`
-  display: flex;
-  align-items: center;
-  height: 10px;
-  height: 10px;
-  width: 69px;
-  justify-content: space-around;
 `;
 
 export const DetaildInfoImage = styled.img`

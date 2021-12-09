@@ -1,5 +1,5 @@
 import CardImage from "./cardImage";
-import GenresPill from "../genresPill";
+import GenresPill from "../genresPill/genresPill";
 import {
   StyledCard,
   CardTitle,

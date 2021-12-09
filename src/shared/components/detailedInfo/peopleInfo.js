@@ -1,4 +1,4 @@
-import { InfoContainer } from "./detailedinfo.styles";
+import { InfoContainer } from "./movieInfo.styles";
 import { BiographyEllipsis } from "./peopleInfo.styles";
 const PeopleInfo = ({
   name,

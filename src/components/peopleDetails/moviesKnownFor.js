@@ -1,12 +1,12 @@
 import { TableWrapper } from "../../shared/detailView.styled";
 
-import Table from "../../shared/components/table/table";
+import Table from "../../shared/components/table";
 
 const MoviesKnownFor = ({ data, isLoading }) => {
   if (isLoading) return "Loading...";
   return (
     <TableWrapper>
-      <Table data={data} dataType="people" />
+      <Table tableLinkValue="m" data={data} dataType="people" />
     </TableWrapper>
   );
 };

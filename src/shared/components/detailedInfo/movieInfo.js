@@ -1,6 +1,10 @@
-import { InfoContainer, AverageVotesContainer } from "./detailedinfo.styles";
+import {
+  InfoContainer,
+  AverageVotesContainer,
+  PillsContainer,
+} from "./movieInfo.styles";
 import { ReactComponent as Star } from "../../star.svg";
-import GenresPill from "../genresPill";
+import GenresPill from "../genresPill/genresPill";
 const MovieInfo = ({
   name,
   description,
@@ -24,12 +28,17 @@ const MovieInfo = ({
         <p>Total votes: {voteCount}</p>
         <p>Popularity: {popularity}</p>
         <p>Runtime: {runtime}'</p>
-
-        {genres.map((genre) => {
-          return (
-            <GenresPill key={genre.id} genreName={genre.name} pillSize={"L"} />
-          );
-        })}
+        <PillsContainer>
+          {genres.map((genre) => {
+            return (
+              <GenresPill
+                key={genre.id}
+                genreName={genre.name}
+                pillSize={"L"}
+              />
+            );
+          })}
+        </PillsContainer>
       </div>
     </InfoContainer>
   );

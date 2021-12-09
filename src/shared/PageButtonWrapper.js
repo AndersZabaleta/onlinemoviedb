@@ -60,7 +60,13 @@ const ListContainer = styled.div`
   display: flex;
   justify-content: center;
 `;
-const PageButtonWrapper = ({ currentPage, handlePage, totalPages }) => {
+const PageButtonWrapper = ({
+  currentPage,
+  handlePage,
+  totalPages,
+  sortByValue,
+  genre,
+}) => {
   const lastPage = totalPages;
   const hasRightEllipsis = lastPage - currentPage > 3;
   const hasLeftEllipsis = currentPage > 3;
@@ -93,7 +99,11 @@ const PageButtonWrapper = ({ currentPage, handlePage, totalPages }) => {
             Previous
           </StyledNextPrevButtons>
         ) : (
-          <Link to={`/discover/page/${currentPage - 1}`}>
+          <Link
+            to={`/discover/genre=${genre}/sort_by=${sortByValue}/page/${
+              currentPage - 1
+            }`}
+          >
             <StyledNextPrevButtons
               onClick={() => handlePage(currentPage > 1 ? currentPage - 1 : 1)}
               page={currentPage - 1}
@@ -107,7 +117,11 @@ const PageButtonWrapper = ({ currentPage, handlePage, totalPages }) => {
             Next page
           </StyledNextPrevButtons>
         ) : (
-          <Link to={`/discover/page/${currentPage + 1}`}>
+          <Link
+            to={`/discover/genre=${genre}/sort_by=${sortByValue}/page/${
+              currentPage + 1
+            }`}
+          >
             <StyledNextPrevButtons
               onClick={() =>
                 handlePage(
@@ -132,7 +146,9 @@ const PageButtonWrapper = ({ currentPage, handlePage, totalPages }) => {
                 }
                 return (
                   <li key={index}>
-                    <Link to={`/discover/page/${page}`}>
+                    <Link
+                      to={`/discover/genre=${genre}/sort_by=${sortByValue}/page/${page}`}
+                    >
                       <StyledButton
                         current={page === currentPage}
                         onClick={() => {

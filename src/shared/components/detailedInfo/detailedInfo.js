@@ -1,9 +1,9 @@
 import MovieInfo from "./movieInfo";
 import PeopleInfo from "./peopleInfo";
 import {
-  MovieDetailsContainerContainer,
-  MovieDetailsContainer,
-  MovieDetailsImgContainer,
+  DetailInfoContainerContainer,
+  DetailInfoContainer,
+  DetailImgContainer,
   DetaildInfoImage,
 } from "./detailedinfo.styles";
 const DetailedInfo = ({
@@ -22,14 +22,14 @@ const DetailedInfo = ({
   placeOfBirth,
 }) => {
   return (
-    <MovieDetailsContainerContainer>
-      <MovieDetailsContainer>
-        <MovieDetailsImgContainer>
+    <DetailInfoContainerContainer>
+      <DetailInfoContainer>
+        <DetailImgContainer>
           <DetaildInfoImage
             src={`https://image.tmdb.org/t/p/w400${infoImg}`}
             alt={name}
           />
-        </MovieDetailsImgContainer>
+        </DetailImgContainer>
         {infoType === "movie" ? (
           <MovieInfo
             description={description}
@@ -51,8 +51,8 @@ const DetailedInfo = ({
             gender={gender}
           />
         )}
-      </MovieDetailsContainer>
-    </MovieDetailsContainerContainer>
+      </DetailInfoContainer>
+    </DetailInfoContainerContainer>
   );
 };
 

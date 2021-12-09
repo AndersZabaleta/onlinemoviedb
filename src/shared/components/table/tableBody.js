@@ -1,6 +1,6 @@
 import TableTr from "./tableTr";
 import { TBody } from "./table.styles";
-const TableBody = ({ data, dataType }) => {
+const TableBody = ({ data, dataType, tableLinkValue }) => {
   return (
     <TBody>
       {data.map((tr, index) => {
@@ -12,6 +12,7 @@ const TableBody = ({ data, dataType }) => {
             character={tr.character}
             index={index}
             id={tr.id}
+            tableLinkValue={tableLinkValue}
           />
         );
       })}

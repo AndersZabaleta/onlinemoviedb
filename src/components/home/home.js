@@ -1,5 +1,5 @@
 import usePopularQuery from "../movies/services/useDiscoverQuery";
-import Card from "../../shared/components/card/card";
+import Card from "../../shared/components/card";
 import { HomeContainer, MovieCardsContainer } from "../movies/home.styled";
 
 const NUMBER_OF_RESULTS = 4;

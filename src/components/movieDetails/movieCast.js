@@ -1,5 +1,5 @@
 import useMovieCastQuery from "./services/useMovieCastQuery";
-import Table from "../../shared/components/table/table";
+import Table from "../../shared/components/table";
 import { TableWrapper } from "../../shared/detailView.styled";
 
 const MovieCast = ({ id }) => {
@@ -8,7 +8,7 @@ const MovieCast = ({ id }) => {
   if (error) return "There was an error " + error.message;
   return (
     <TableWrapper>
-      <Table data={data} dataType="movie" />
+      <Table tableLinkValue="p" data={data} dataType="movie" />
     </TableWrapper>
   );
 };
