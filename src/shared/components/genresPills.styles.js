@@ -8,10 +8,12 @@ export const Pill = styled.span`
   border-radius: 8px;
   display: inline-block;
   text-align: center;
-  font-size: 8px;
+  margin: 2px;
+  font-size: ${({ pillSize }) => (pillSize === "S" ? "8px" : "10px")};
   height: 15px;
   width: 23%;
   font-weight: bold;
+
   &:hover {
     cursor: default;
   }

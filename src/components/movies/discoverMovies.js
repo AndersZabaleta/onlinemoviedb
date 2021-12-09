@@ -1,19 +1,9 @@
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import PageButtonWrapper from "../../shared/PageButtonWrapper";
-/* import { GenresContainer, GenresSpan } from "../../shared/genres.styled"; */
 import usePopularQuery from "./services/useDiscoverQuery";
 import Card from "../../shared/components/card/card";
-import {
-  HomeContainer,
-  MovieCardsContainer,
-  MovieCard,
-  CardTitle,
-  /*   GenresContainer, */
-  /*   GenresSpan, */
-  /* CardImage, */
-} from "./home.styled";
-import CardImage from "../../shared/components/card/cardImage";
+import { HomeContainer, MovieCardsContainer } from "./home.styled";
+
 const NUMBER_OF_RESULTS = 20;
 
 const DiscoverMovies = ({ genre, pageParams, sortByValue, genres }) => {
@@ -37,7 +27,14 @@ const DiscoverMovies = ({ genre, pageParams, sortByValue, genres }) => {
       <HomeContainer>
         <MovieCardsContainer>
           {data.map((movie) => {
-            return <Card dataToShow={movie} />;
+            return (
+              <Card
+                imgUrl={movie.poster_path}
+                name={movie.original_title}
+                genres={movie.genres ? movie.genres : []}
+                objectId={movie.id}
+              />
+            );
           })}
         </MovieCardsContainer>
       </HomeContainer>
@@ -50,27 +47,3 @@ const DiscoverMovies = ({ genre, pageParams, sortByValue, genres }) => {
   );
 };
 export default DiscoverMovies;
-{
-  /* <MovieCard>
-                <Link to={`/m/details/${movie.id}`}>
-                  {movie.poster_path ? (
-                    <CardImage
-                      src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
-                      alt={movie.title}
-                    />
-                  ) : (
-                    <CardImage
-                      src="https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg"
-                      alt={movie.original_title}
-                    />
-                  )}
-                  <CardTitle>{movie.original_title}</CardTitle>
-                </Link>
-
-                <GenresContainer>
-                  {movie.genres.map((genre) => {
-                    return <GenresSpan>{genre.name}</GenresSpan>;
-                  })}
-                </GenresContainer>
-              </MovieCard> */
-}

@@ -1,27 +1,32 @@
 import CardImage from "./cardImage";
-import GenresPill from "./genresPill";
-import { StyledCard, CardTitle, PillsContainer } from "./card.styles";
-import { Link } from "react-router-dom";
-const Card = ({ dataToShow }) => {
+import GenresPill from "../genresPill";
+import {
+  StyledCard,
+  CardTitle,
+  PillsContainer,
+  StyledLink,
+} from "./card.styles";
+
+const Card = ({ imgUrl, name, genres, objectId }) => {
   return (
     <StyledCard>
-      <Link to={`/m/details/${dataToShow.id}`}>
-        {dataToShow.poster_path ? (
+      <StyledLink to={`/m/details/${objectId}`}>
+        {imgUrl ? (
           <CardImage
-            src={`https://image.tmdb.org/t/p/w200${dataToShow.poster_path}`}
-            alt={dataToShow.title}
+            src={`https://image.tmdb.org/t/p/w200${imgUrl}`}
+            alt={name}
           />
         ) : (
           <CardImage
             src="https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg"
-            alt={dataToShow.original_title}
+            alt={name}
           />
         )}
-        <CardTitle>{dataToShow.original_title}</CardTitle>
-      </Link>
+        <CardTitle>{name}</CardTitle>
+      </StyledLink>
       <PillsContainer>
-        {dataToShow.genres.map((genre) => {
-          return <GenresPill genre={genre} />;
+        {genres.map((genre) => {
+          return <GenresPill pillSize={"S"} genreName={genre.name} />;
         })}
       </PillsContainer>
     </StyledCard>

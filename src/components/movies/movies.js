@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { StyledHome } from "./home.styled";
-import { SelectWrapper } from "./home.styled";
 
 import useGenresQuery from "./services/useGenresQuery";
 
 import DiscoverMovies from "./discoverMovies";
 import Select from "../../shared/components/select";
+
+import { SelectWrapper, StyledHome } from "./home.styled";
 
 const sortMoviesOption = [
   {
@@ -37,7 +37,7 @@ const Movies = () => {
   const [genre, setGenre] = useState("28");
   const [sortByValue, setSortByValue] = useState("popularity.desc");
 
-  const { isLoading, error, data } = useGenresQuery();
+  const { isLoading, data } = useGenresQuery();
   const handleGenre = (e) => {
     setGenre(e.target.value);
   };
