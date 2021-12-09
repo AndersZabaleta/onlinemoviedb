@@ -1,4 +1,3 @@
-import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
   Header,
@@ -10,24 +9,21 @@ import {
 } from "./components";
 import "./App.css";
 function App() {
-  const queryClient = new QueryClient();
   return (
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route
-            exact
-            path="/discover/genre=:genre/sort_by=:sortValue/page/:page"
-            element={<Movies />}
-          />
-          <Route exact path="/m/details/:id" element={<MovieDetails />} />
-          <Route exact path="/p/details/:id" element={<PeopleDetails />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </QueryClientProvider>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route
+          exact
+          path="/discover/genre=:genre/sort_by=:sortValue/page/:page"
+          element={<Movies />}
+        />
+        <Route exact path="/m/details/:id" element={<MovieDetails />} />
+        <Route exact path="/p/details/:id" element={<PeopleDetails />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
