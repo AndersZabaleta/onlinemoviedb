@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {  Routes, Route } from "react-router-dom";
 import {
   Header,
   Movies,
@@ -8,9 +8,9 @@ import {
   PeopleDetails,
 } from "./components";
 import "./App.css";
-function App() {
+const App = () => {
   return (
-    <BrowserRouter>
+ <>
       <Header />
       <Routes>
         <Route exact path="/" element={<Home />} />
@@ -23,7 +23,7 @@ function App() {
         <Route exact path="/p/details/:id" element={<PeopleDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </BrowserRouter>
+    </>
   );
 }
 

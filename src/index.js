@@ -1,15 +1,18 @@
-import "react-app-polyfill/ie11";
-import "react-app-polyfill/stable";
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "react-app-polyfill/ie11";
+import "react-app-polyfill/stable";
+import "./index.css"
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter} from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 const queryClient = new QueryClient();
 ReactDOM.render(
   <QueryClientProvider client={queryClient}>
+    <BrowserRouter>
     <App />
+    </BrowserRouter>
   </QueryClientProvider>,
   document.getElementById("root")
 );
