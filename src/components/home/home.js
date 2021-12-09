@@ -8,6 +8,7 @@ const page = 1;
 const sort = "popularity.desc";
 
 const Home = () => {
+  
   const { isLoading, data } = usePopularQuery(
     genre,
     page,

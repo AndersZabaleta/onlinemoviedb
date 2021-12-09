@@ -7,6 +7,7 @@ import {
 } from "./header.styles";
 
 const Header = () => {
+  
   const location = useLocation().pathname;
 
   return (
