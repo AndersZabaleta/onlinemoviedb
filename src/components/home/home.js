@@ -6,13 +6,14 @@ import {
   CardTitle,
 } from "../movies/home.styled";
 
+import CardImage from "../../shared/components/card/cardImage";
+
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: black;
-  
 `;
 
 const Home = () => {
@@ -37,22 +38,18 @@ const Home = () => {
             <StyledLink to={`/m/details/${movie.id}`}>
               <MovieCard>
                 {movie.poster_path ? (
-                  <img
+                  <CardImage
                     src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
                     alt={movie.title}
-                
                   />
                 ) : (
-                  <img
-                    style={{ width: "200px", height: "300px" }}
+                  <CardImage
                     src="https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg"
-                    alt={movie.original_title}
+                    alt={movie.title}
                   />
                 )}
 
-              
-                  <CardTitle>{movie.original_title}</CardTitle>
-              
+                <CardTitle>{movie.original_title}</CardTitle>
               </MovieCard>
             </StyledLink>
           );
@@ -63,3 +60,17 @@ const Home = () => {
 };
 
 export default Home;
+
+/* {<img
+ 
+  src="https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg"
+  alt={movie.original_title}
+/>} */
+
+{
+  /* <img
+                 src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} 
+                   alt={movie.title}
+                
+                />  */
+}

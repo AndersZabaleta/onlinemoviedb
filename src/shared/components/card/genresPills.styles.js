@@ -1,14 +1,6 @@
 import styled from "styled-components";
 
-export const GenresContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  width: 80%;
-  align-items: center;
-`;
-
-export const GenresSpan = styled.span`
+export const Pill = styled.span`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

@@ -8,31 +8,28 @@ import useGenresQuery from "./services/useGenresQuery";
 import DiscoverMovies from "./discoverMovies";
 import Select from "../../shared/components/select";
 
-
 const sortMoviesOption = [
   {
     id: "popularity.desc",
-    name : "Popularity Desc."
+    name: "Popularity Desc.",
   },
   {
     id: "popularity.asc",
-    name : "Popularity Asc."
+    name: "Popularity Asc.",
   },
   {
     id: "original_title.desc",
-    name : "Title Desc."
+    name: "Title Desc.",
   },
   {
     id: "release_date.desc",
-    name : "Release date Desc."
+    name: "Release date Desc.",
   },
   {
     id: "release_date.asc",
-    name : "Release date Asc."
+    name: "Release date Asc.",
   },
-  
-]
-
+];
 
 const Movies = () => {
   const pageParams = useParams().page;
@@ -51,8 +48,8 @@ const Movies = () => {
   return (
     <StyledHome>
       <SelectWrapper>
-     <Select onChange={handleGenre} options={data} />
-     <Select onChange={handleSortByValue} options={sortMoviesOption} />
+        <Select onChange={handleGenre} options={data} />
+        <Select onChange={handleSortByValue} options={sortMoviesOption} />
       </SelectWrapper>
       <DiscoverMovies
         genres={data}

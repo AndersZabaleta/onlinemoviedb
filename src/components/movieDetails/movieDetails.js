@@ -2,7 +2,7 @@ import { useParams, Navigate } from "react-router-dom";
 import useMovieDetailsQuery from "./services/useMovieDetailsQuery";
 import MovieCast from "./movieCast";
 import { ReactComponent as Star } from "../../shared/star.svg";
-import { GenresContainer, GenresSpan } from "../../shared/genres.styled";
+/* import { GenresContainer, GenresSpan } from "../../shared/genres.styled"; */
 import {
   MovieDetailsPage,
   MovieDetailsContainerContainer,
@@ -41,11 +41,11 @@ const MovieDetails = () => {
               <p>Total votes: {data.vote_count}</p>
               <p>Popularity: {data.popularity}</p>
               <p>Runtime: {data.runtime}'</p>
-              <GenresContainer>
+              {/*  <GenresContainer>
                 {data.genres.map((genre) => {
                   return <GenresSpan>{genre.name}</GenresSpan>;
                 })}
-              </GenresContainer>
+              </GenresContainer> */}
             </div>
           </InfoContainer>
         </MovieDetailsContainer>
