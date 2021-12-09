@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Pagination from "../../shared/pagination";
+import Pagination from "../../shared/components/pagination";
 import usePopularQuery from "./services/useDiscoverQuery";
 import Card from "../../shared/components/card";
 import { HomeContainer, MovieCardsContainer } from "./movies.styels";
