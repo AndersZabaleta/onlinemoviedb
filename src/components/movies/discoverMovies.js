@@ -7,7 +7,6 @@ import { HomeContainer, MovieCardsContainer } from "./home.styled";
 const NUMBER_OF_RESULTS = 20;
 
 const DiscoverMovies = ({ genre, pageParams, sortByValue, genres }) => {
-  console.log(genres);
   const [page, setPage] = useState(pageParams ? pageParams : 1);
   const { isLoading, error, data, totalPages } = usePopularQuery(
     genre,
@@ -29,6 +28,7 @@ const DiscoverMovies = ({ genre, pageParams, sortByValue, genres }) => {
           {data.map((movie) => {
             return (
               <Card
+                key={movie.id}
                 imgUrl={movie.poster_path}
                 name={movie.original_title}
                 genres={movie.genres ? movie.genres : []}
