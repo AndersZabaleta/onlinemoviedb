@@ -1,4 +1,4 @@
-import {  Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import {
   Header,
   Movies,
@@ -8,9 +8,10 @@ import {
   PeopleDetails,
 } from "./components";
 import "./App.css";
+
 const App = () => {
   return (
- <>
+    <>
       <Header />
       <Routes>
         <Route exact path="/" element={<Home />} />
@@ -25,6 +26,6 @@ const App = () => {
       </Routes>
     </>
   );
-}
+};
 
 export default App;
