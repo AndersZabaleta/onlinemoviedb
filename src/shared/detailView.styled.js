@@ -58,52 +58,12 @@ export const AverageVotesContainer = styled.div`
   width: 69px;
   justify-content: space-around;
 `;
-/* export const DetaildInfoContainer = styled.div`
-  display: flex;
-  width: 100%;
-  background-color: rgb(31, 31, 31);
-  height: 100vh;
-  align-items: center;
-`;
-
-export const DetaildInfoWrapper = styled.div`
-  display: flex;
-  width: 80%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: white;
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-  }
-`;
-export const DetaildInfoContainerContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-export const DetailedInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  width: 50%;
-`;
-export const DetailedInfoImgContainer = styled.div`
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-`; */
 
 export const TableWrapper = styled.div`
   width: 80%;
   display: flex;
   justify-content: center;
   @media (max-width: 768px) {
-    /* font-size: 12px; */
     width: 100%;
   }
 `;

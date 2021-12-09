@@ -6,7 +6,7 @@ import KnownFor from "./knownFor";
 const PeopleDetails = () => {
   const { id } = useParams();
   const { isLoading, data } = usePeopleDetailsQuery(id);
-  console.log(data);
+
   if (isLoading) return "Loading...";
   if (data.status_code) return <Navigate to="/404" />;
   return (

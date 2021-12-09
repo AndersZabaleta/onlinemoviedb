@@ -8,7 +8,6 @@ export const TableWrapper = styled.div`
   display: flex;
   justify-content: center;
   @media (max-width: 768px) {
-    /* font-size: 12px; */
     width: 100%;
   }
 `;
@@ -23,12 +22,6 @@ export const StyledTable = styled.div`
   @media (max-width: 768px) {
     font-size: 12px;
   }
-  /*  @media (max-width: 540px) {
-    font-size: 10px;
-  }
-  @media (max-width: 320px) {
-    font-size: 8px;
-  } */
 `;
 
 export const Tr = styled.div`

@@ -31,8 +31,6 @@ export const CardTitle = styled.h1`
   padding: 10px;
   font-size: 1.2rem;
   margin: 0;
-  /* background: white; */
-
   background-color: transparent;
 `;
 

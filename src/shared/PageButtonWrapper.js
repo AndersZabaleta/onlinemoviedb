@@ -53,6 +53,13 @@ const StyledNextPrevButtonsWrapper = styled.div`
           width: "50%":
 `;
 
+const StyledEllipsis = styled.span`
+  align-self: end;
+`;
+const ListContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 const PageButtonWrapper = ({ currentPage, handlePage, totalPages }) => {
   const lastPage = totalPages;
   const hasRightEllipsis = lastPage - currentPage > 3;
@@ -115,17 +122,13 @@ const PageButtonWrapper = ({ currentPage, handlePage, totalPages }) => {
         )}
       </StyledNextPrevButtonsWrapper>
       <div>
-        <div style={{ display: "flex", justifyContent: "center" }}>
+        <ListContainer>
           <StyledUl>
             {pagesToDraw
               .filter((_, i) => i < totalPages)
               .map((page, index) => {
                 if (page < 0) {
-                  return (
-                    <span style={{ alignSelf: "end" }} key={index}>
-                      &hellip;
-                    </span>
-                  );
+                  return <StyledEllipsis key={index}>&hellip;</StyledEllipsis>;
                 }
                 return (
                   <li key={index}>
@@ -145,7 +148,7 @@ const PageButtonWrapper = ({ currentPage, handlePage, totalPages }) => {
                 );
               })}
           </StyledUl>
-        </div>
+        </ListContainer>
       </div>
     </StyledPageButtonWrapper>
   );
