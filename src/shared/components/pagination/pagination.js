@@ -5,9 +5,7 @@ import {
   StyledUl,
   StyledButton,
   StyledNextPrevButtons,
-  StyledNextPrevButtonsWrapper,
   StyledEllipsis,
-  ListContainer,
 } from "./pagination.styles";
 const Pagination = ({
   currentPage,
@@ -42,7 +40,7 @@ const Pagination = ({
 
   return (
     <StyledPageButtonWrapper>
-      <StyledNextPrevButtonsWrapper>
+      <div>
         {currentPage === 1 ? (
           <StyledNextPrevButtons disabled={true}>
             Previous
@@ -81,9 +79,9 @@ const Pagination = ({
             </StyledNextPrevButtons>
           </Link>
         )}
-      </StyledNextPrevButtonsWrapper>
+      </div>
       <div>
-        <ListContainer>
+        <div>
           <StyledUl>
             {pagesToDraw
               .filter((_, i) => i < totalPages)
@@ -111,7 +109,7 @@ const Pagination = ({
                 );
               })}
           </StyledUl>
-        </ListContainer>
+        </div>
       </div>
     </StyledPageButtonWrapper>
   );

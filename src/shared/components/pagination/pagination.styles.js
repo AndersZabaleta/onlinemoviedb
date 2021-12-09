@@ -46,17 +46,6 @@ export const StyledNextPrevButtons = styled.button`
     cursor: pointer;
   }
 `;
-
-export const StyledNextPrevButtonsWrapper = styled.div`
-          display: "flex";
-          justify-ontent: "start";
-          width: "50%":
-`;
-
 export const StyledEllipsis = styled.span`
   align-self: end;
-`;
-export const ListContainer = styled.div`
-  display: flex;
-  justify-content: center;
 `;

@@ -5,8 +5,7 @@ export const TBody = styled.div`
 `;
 export const TableWrapper = styled.div`
   width: 80%;
-  display: flex;
-  justify-content: center;
+
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -45,8 +44,6 @@ export const Thead = styled.div`
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
   background-color: #353148;
 `;
 export const Th = styled.div`
