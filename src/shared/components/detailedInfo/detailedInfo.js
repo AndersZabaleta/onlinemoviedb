@@ -1,26 +1,10 @@
-import MovieInfo from "./movieInfo";
-import PeopleInfo from "./peopleInfo";
 import {
   DetailInfoContainerContainer,
   DetailInfoContainer,
   DetailImgContainer,
   DetaildInfoImage,
 } from "./detailedinfo.styles";
-const DetailedInfo = ({
-  infoImg,
-  name,
-  description,
-  releaseDate,
-  voteAverage,
-  voteCount,
-  popularity,
-  runtime,
-  genres,
-  infoType,
-  birthday,
-  gender,
-  placeOfBirth,
-}) => {
+const DetailedInfo = ({ infoImg, name, children }) => {
   return (
     <DetailInfoContainerContainer>
       <DetailInfoContainer>
@@ -30,27 +14,7 @@ const DetailedInfo = ({
             alt={name}
           />
         </DetailImgContainer>
-        {infoType === "movie" ? (
-          <MovieInfo
-            description={description}
-            name={name}
-            voteAverage={voteAverage}
-            voteCount={voteCount}
-            popularity={popularity}
-            runtime={runtime}
-            releaseDate={releaseDate}
-            genres={genres}
-          />
-        ) : (
-          <PeopleInfo
-            name={name}
-            description={description}
-            birthday={birthday}
-            placeOfBirth={placeOfBirth}
-            popularity={popularity}
-            gender={gender}
-          />
-        )}
+        {children}
       </DetailInfoContainer>
     </DetailInfoContainerContainer>
   );

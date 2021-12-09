@@ -2,6 +2,7 @@ import { useParams, Navigate } from "react-router-dom";
 import useMovieDetailsQuery from "./services/useMovieDetailsQuery";
 import MovieCast from "./movieCast";
 import DetailedInfo from "../../shared/components/detailedInfo";
+import MovieInfo from "../../shared/components/detailedInfo/movieInfo";
 import { DetailPage } from "../../shared/common/styles";
 const MovieDetails = () => {
   const { id } = useParams();
@@ -24,17 +25,21 @@ const MovieDetails = () => {
   return (
     <DetailPage>
       <DetailedInfo
-        infoType="movie"
+
         infoImg={poster_path}
         name={title}
-        description={overview}
-        releaseDate={release_date}
-        voteAverage={vote_average}
-        voteCount={vote_count}
-        popularity={popularity}
-        runtime={runtime}
-        genres={genres}
-      />
+
+      >
+        <MovieInfo
+          description={overview}
+          name={title}
+          voteAverage={vote_average}
+          voteCount={vote_count}
+          popularity={popularity}
+          runtime={runtime}
+          releaseDate={release_date}
+          genres={genres}
+        /></DetailedInfo>
       <MovieCast id={id} />
     </DetailPage>
   );
