@@ -23,7 +23,14 @@ const PeopleDetails = () => {
 
   return (
     <DetailPage>
-      <DetailedInfo infoImg={profile_path} name={name}>
+      <DetailedInfo
+        infoImg={
+          profile_path
+            ? `https://image.tmdb.org/t/p/w400${profile_path}`
+            : "https://i.pinimg.com/originals/83/46/bc/8346bcb80380e7f21ba1d7ab8b570d85.png"
+        }
+        name={name}
+      >
         <PeopleInfo
           name={name}
           description={biography}

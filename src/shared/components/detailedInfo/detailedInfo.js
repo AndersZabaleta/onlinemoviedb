@@ -9,10 +9,7 @@ const DetailedInfo = ({ infoImg, name, children }) => {
     <DetailInfoContainerContainer>
       <DetailInfoContainer>
         <DetailImgContainer>
-          <DetaildInfoImage
-            src={`https://image.tmdb.org/t/p/w400${infoImg}`}
-            alt={name}
-          />
+          <DetaildInfoImage src={infoImg} alt={name} />
         </DetailImgContainer>
         {children}
       </DetailInfoContainer>
