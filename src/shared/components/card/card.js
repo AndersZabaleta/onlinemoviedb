@@ -8,6 +8,8 @@ import {
 } from "./card.styles";
 
 const Card = ({ imgUrl, name, genres, objectId }) => {
+  const genresArray = genres.slice(0, 3);
+
   return (
     <StyledCard>
       <StyledLink to={`/m/details/${objectId}`}>
@@ -25,11 +27,15 @@ const Card = ({ imgUrl, name, genres, objectId }) => {
         <CardTitle>{name}</CardTitle>
       </StyledLink>
       <PillsContainer>
-        {genres.map((genre) => {
-          return (
-            <GenresPill key={genre.id}  genreName={genre.name} />
-          );
+        {genresArray.map((genre) => {
+          return <GenresPill key={genre.id} genreName={genre.name} />;
         })}
+        {genres.length - genresArray.length >= 1 ? (
+          <GenresPill
+            key={`+${genres.length - genresArray.length}`}
+            genreName={`+${genres.length - genresArray.length}`}
+          />
+        ) : null}
       </PillsContainer>
     </StyledCard>
   );
