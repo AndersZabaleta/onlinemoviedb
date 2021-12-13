@@ -7,13 +7,12 @@ import {
 } from "./header.styles";
 
 const Header = () => {
-  
   const location = useLocation().pathname;
 
   return (
     <HeaderWrapper>
       <StyledLink to="/">
-        <HeaderElement current={location === "/"}>home</HeaderElement>
+        <HeaderElement current={location === "/"}>Home</HeaderElement>
       </StyledLink>
       <HeaderElementContainer>
         <StyledLink to="/discover/genre=28/sort_by=popularity.desc/page/1">
