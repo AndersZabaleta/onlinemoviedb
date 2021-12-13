@@ -3,16 +3,17 @@ import styled from "styled-components";
 export const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  background-color: #000000;
+  background-color: ${({ theme: { colors } }) => colors.header};
   color: white;
 `;
 
 export const HeaderElement = styled.div`
   padding: 20px;
-  background-color: ${(props) => (props.current ? "#e0b416" : "transparent")};
+  background-color: ${(props) =>
+    props.current ? props.theme.colors.active : "transparent"};
 
   &:hover {
-    background-color: #e0b416;
+    background-color: ${({ theme: { colors } }) => colors.active};
     cursor: pointer;
   }
 `;

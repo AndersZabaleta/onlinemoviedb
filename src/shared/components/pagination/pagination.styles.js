@@ -24,10 +24,11 @@ export const StyledButton = styled.button`
   margin-left: 2px;
   border-radius: 3px;
   border: 1px solid grey;
-  box-shadow: 8px 12px 15px -3px #000000;
-  background-color: ${(props) => (props.current ? "#E0B416" : "white")};
+  box-shadow: 8px 12px 15px -3px ${({ theme: { colors } }) => colors.header};
+  background-color: ${(props) =>
+    props.current ? props.theme.colors.active : "white"};
   &:hover {
-    background-color: #e0b416;
+    background-color: ${({ theme: { colors } }) => colors.active};
     cursor: pointer;
   }
 `;
@@ -40,9 +41,9 @@ export const StyledNextPrevButtons = styled.button`
   background-color: white;
   border-radius: 3px;
   border: 1px solid grey;
-  box-shadow: 8px 12px 15px -3px #000000;
+  box-shadow: 8px 12px 15px -3px ${({ theme: { colors } }) => colors.header};
   &:hover {
-    background-color: #e0b416;
+    background-color: ${({ theme: { colors } }) => colors.active};
     cursor: pointer;
   }
 `;

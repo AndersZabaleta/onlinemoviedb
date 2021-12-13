@@ -44,13 +44,13 @@ export const Thead = styled.div`
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   width: 100%;
-  background-color: #353148;
+  background-color: ${({ theme: { colors } }) => colors.detailedInfoBg};
 `;
 export const Th = styled.div`
   width: 33%;
   display: flex;
   justify-content: center;
-  background-color: #353148;
+  background-color: ${({ theme: { colors } }) => colors.detailedInfoBg};
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 `;

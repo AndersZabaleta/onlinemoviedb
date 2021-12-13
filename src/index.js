@@ -2,18 +2,21 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "react-app-polyfill/ie11";
 import "react-app-polyfill/stable";
-import "./index.css"
+import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter} from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
+import Theme from "./shared/theme/theme";
 const queryClient = new QueryClient();
 ReactDOM.render(
-  <QueryClientProvider client={queryClient}>
-    <BrowserRouter>
-    <App />
-    </BrowserRouter>
-  </QueryClientProvider>,
+  <Theme>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </QueryClientProvider>
+  </Theme>,
   document.getElementById("root")
 );
 
