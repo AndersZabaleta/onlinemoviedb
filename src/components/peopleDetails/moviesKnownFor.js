@@ -24,7 +24,7 @@ const MoviesKnownFor = ({ data, isLoading }) => {
                       />
                     ) : (
                       <TableImg
-                        src="https://i.pinimg.com/originals/83/46/bc/8346bcb80380e7f21ba1d7ab8b570d85.png"
+                        src="https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg"
                         alt={title}
                       />
                     )}
@@ -33,7 +33,7 @@ const MoviesKnownFor = ({ data, isLoading }) => {
                 <Td>
                   <Link to={`/m/details/${id}`}>{title} </Link>
                 </Td>
-                <Td>{character}</Td>
+                <Td>{character ? character : "Unknown"}</Td>
               </TableTr>
             );
           })}
