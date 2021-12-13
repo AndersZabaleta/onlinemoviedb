@@ -1,4 +1,4 @@
-import {
+/* import {
   DropdownWrapper,
   DropDown,
   SelectSpan,
@@ -21,3 +21,4 @@ const SortMovies = ({ handleSortByValue }) => {
 };
 
 export default SortMovies;
+ */
