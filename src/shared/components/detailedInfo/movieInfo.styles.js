@@ -1,15 +1,16 @@
 import styled from "styled-components";
-
+import FormatDate from "../../hooks/formatDate";
 export const InfoContainer = styled.div`
   width: 50%;
 
   @media (max-width: 768px) {
-    width: 266.797px;
+    width: 100%;
   }
 `;
 
 export const PillsContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `;
 
 export const AverageVotesContainer = styled.div`
@@ -19,4 +20,8 @@ export const AverageVotesContainer = styled.div`
   height: 10px;
   width: 69px;
   justify-content: space-around;
+`;
+
+export const StyledFormatedDate = styled(FormatDate).attrs({ tag: "span" })`
+  color: white;
 `;

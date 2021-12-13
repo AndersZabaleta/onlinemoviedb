@@ -1,24 +1,15 @@
 import styled from "styled-components";
 
 export const DropdownWrapper = styled.div`
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 10px;
+  width: 30%;
   @media (max-width: 820px) {
-    margin: 10px 0px 10px 0px;
+    width: 80%;
+    margin-top: 10px;
   }
 `;
 
 export const DropDown = styled.select`
+  width: 100%;
   border-radius: 10px;
-  outline: none;
-  border: none;
-  background-color: transparent;
-  width: 60%;
-`;
-
-export const SelectSpan = styled.span`
-  margin-left: 5px;
-  margin-right: 5px;
-  width: 29%;
+  height: 25px;
 `;

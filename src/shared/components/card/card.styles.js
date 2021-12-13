@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  color: black;
+  color: ${({ theme: { colors } }) => colors.header};
 `;
 
 export const StyledCard = styled.div`
@@ -17,9 +17,9 @@ export const StyledCard = styled.div`
   border-radius: 10px;
   background-color: white;
   height: 400px;
-  box-shadow: 8px 12px 15px -3px #000000;
+  box-shadow: 8px 12px 15px -3px ${({ theme: { colors } }) => colors.header};
   &:hover {
-    background-color: #e0b416;
+    background-color: ${({ theme: { colors } }) => colors.active};
   }
 `;
 

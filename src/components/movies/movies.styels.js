@@ -15,16 +15,17 @@ export const StyledHome = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(165, 164, 164);
+  background-color: rgb(238, 238, 238);
 `;
 
 export const SelectWrapper = styled.div`
+  position: relative;
+  margin: 10px;
   width: 80%;
-  margin: 10px 0px 10px 0px;
   display: flex;
   justify-content: space-evenly;
   @media (max-width: 820px) {
     flex-direction: column;
-    width: 30%;
+    align-items: center;
   }
 `;

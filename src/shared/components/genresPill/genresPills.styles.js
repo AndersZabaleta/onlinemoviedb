@@ -9,7 +9,7 @@ export const Pill = styled.span`
   text-align: center;
   font-size: ${({ pillSize }) => (pillSize === PILL_SIZES.S ? "12px" : "15px")};
   height: ${({ pillSize }) => (pillSize === PILL_SIZES.S ? "18px" : "23px")};
-  width: 100px;
+  width: ${({ pillSize }) => (pillSize === PILL_SIZES.S ? "100px" : "200px")};
   font-weight: bold;
   margin: 2px;
   &:hover {

@@ -1,12 +1,12 @@
 import styled from "styled-components";
 export const DetailInfoContainerContainer = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   justify-content: center;
   color: white;
-  background-color: rgb(31, 31, 31);
-  @media (max-width: 540px) {
+  background-color: ${({ theme: { colors } }) => colors.detailedInfoBg};
+  (max-width: 540px) {
     font-size: 12px;
   }
   @media (max-width: 320px) {
@@ -35,6 +35,6 @@ export const DetailImgContainer = styled.div`
 export const DetaildInfoImage = styled.img`
   width: 266.797px;
   @media (max-width: 768px) {
-    width: 266.797px;
+    width: 166.797px;
   }
 `;

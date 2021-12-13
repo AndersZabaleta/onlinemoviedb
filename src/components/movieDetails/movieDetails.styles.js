@@ -2,10 +2,9 @@ import styled from "styled-components";
 
 export const MovieDetailsContainerContainer = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   justify-content: center;
-  background-color: rgb(31, 31, 31);
   @media (max-width: 540px) {
     font-size: 12px;
   }
