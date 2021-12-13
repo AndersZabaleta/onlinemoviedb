@@ -1,10 +1,10 @@
-import { DropdownWrapper, DropDown, SelectSpan } from "./select.styles";
+import { DropdownWrapper, DropDown } from "./select.styles";
 
 const Select = ({ onChange, options, span, selectedOption }) => {
   return (
     <DropdownWrapper>
-      <SelectSpan>{span}: </SelectSpan>
       <DropDown onChange={(e) => onChange(e)}>
+        <option disabled>{span}</option>
         {options.map((option) => {
           return (
             <option
