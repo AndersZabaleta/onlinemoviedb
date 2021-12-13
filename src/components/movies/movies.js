@@ -4,6 +4,7 @@ import useGenresQuery from "./services/useGenresQuery";
 
 import DiscoverMovies from "./discoverMovies";
 import Select from "../../shared/components/select";
+import Input from "../../shared/components/input";
 
 import { SelectWrapper, StyledHome } from "./movies.styels";
 
@@ -54,14 +55,15 @@ const Movies = () => {
           selectedOption={parseInt(genre)}
           onChange={handleGenre}
           options={data}
-          span={"Genre"}
+          span="Genre"
         />
         <Select
           selectedOption={sortValue}
           onChange={handleSortByValue}
           options={sortMoviesOption}
-          span={"Sort by"}
+          span="Sort by"
         />
+        <Input />
       </SelectWrapper>
       <DiscoverMovies
         genres={data}
