@@ -8,6 +8,7 @@ export const AutocompleteLink = styled(Link)`
   color: white;
 `;
 export const StyledAutocompleteResults = styled.div`
+  color: white;
   background-color: ${({ theme: { colors } }) => colors.autompleteBg};
   &:hover {
     background-color: ${({ theme: { colors } }) => colors.autocompleteHover};
@@ -22,6 +23,7 @@ export const StyledInput = styled.input`
   width: 100%;
   border-radius: 10px;
   height: 25px;
+  padding: 12px;
 `;
 
 export const InputContainer = styled.div`

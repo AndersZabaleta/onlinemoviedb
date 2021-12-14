@@ -37,4 +37,10 @@ export const DetaildInfoImage = styled.img`
   @media (max-width: 768px) {
     width: 166.797px;
   }
+  @media (max-width: 540px) {
+    width: 126.797px;
+  }
+  @media (max-width: 414px) {
+    width: 126.797px;
+  }
 `;

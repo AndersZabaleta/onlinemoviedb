@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import PILL_SIZES from "./pillSizes";
 export const Pill = styled.span`
+  background-color: #121212bb;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,27 +28,19 @@ export const Pill = styled.span`
   &:hover {
     cursor: default;
   }
+  @media (max-width: 540px) {
+    font-size: ${PILL_SIZES.SMALL.fontSize};
+    height: ${PILL_SIZES.SMALL.height};
+    width: ${PILL_SIZES.SMALL.width};
+  }
   @media (max-width: 411px) {
     font-size: ${PILL_SIZES.SMALL.fontSize};
     height: ${PILL_SIZES.SMALL.height};
     width: ${PILL_SIZES.SMALL.width};
   }
-`;
-
-/* font-size: ${({ pillSize }) =>
-    pillSize === PILL_SIZES.S.size
-      ? PILL_SIZES.S.fontSize
-      : PILL_SIZES.L.fontSize};
-  height: ${({ pillSize }) =>
-    pillSize === PILL_SIZES.S.size ? PILL_SIZES.S.height : PILL_SIZES.L.height};
-  width: ${({ pillSize }) =>
-    pillSize === PILL_SIZES.S.size ? PILL_SIZES.S.width : PILL_SIZES.L.width};
-  font-weight: bold;
-  margin: 2px;
-  &:hover {
-    cursor: default;
+  @media (max-width: 360px) {
+    font-size: 10px;
+    height: 12px;
+    width: 75px;
   }
-  @media (max-width: 412px) {
-    font-size: ${PILL_SIZES.S.fontSize};
-    width: ${PILL_SIZES.S.width};
-  } */
+`;
