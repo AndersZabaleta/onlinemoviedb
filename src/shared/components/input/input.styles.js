@@ -6,9 +6,14 @@ export const AutocompleteLink = styled(Link)`
   align-items: center;
   test-decoration: none;
   color: white;
+  height: 100%;
 `;
 export const StyledAutocompleteResults = styled.div`
   color: white;
+  height: 75px;
+  display: flex;
+  align-items: center;
+
   background-color: ${({ theme: { colors } }) => colors.autompleteBg};
   &:hover {
     background-color: ${({ theme: { colors } }) => colors.autocompleteHover};
@@ -17,6 +22,7 @@ export const StyledAutocompleteResults = styled.div`
 
 export const AutocompleteImage = styled.img`
   width: 50px;
+  height: 100%;
 `;
 
 export const StyledInput = styled.input`
@@ -32,4 +38,8 @@ export const InputContainer = styled.div`
     width: 80%;
     margin-top: 10px;
   }
+`;
+
+export const AutocompleteP = styled.p`
+  margin-left: 10px;
 `;

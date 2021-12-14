@@ -1,7 +1,11 @@
 import useMovieCastQuery from "./services/useMovieCastQuery";
 import Table from "../../shared/components/table";
 import { TableWrapper } from "../../shared/common/styles";
-import { TableImg, Td } from "../../shared/components/table/table.styles";
+import {
+  TableImg,
+  Td,
+  StyledLink,
+} from "../../shared/components/table/table.styles";
 import TableBody from "../../shared/components/table/tableBody";
 import TableTr from "../../shared/components/table/tableTr";
 import Spinner from "../../shared/components/spinner";
@@ -20,7 +24,7 @@ const MovieCast = ({ id }) => {
             return (
               <TableTr index={index}>
                 <Td>
-                  <Link to={`/p/details/${id}`}>
+                  <StyledLink to={`/p/details/${id}`}>
                     {profile_path ? (
                       <TableImg
                         src={`https://image.tmdb.org/t/p/w500${profile_path}`}
@@ -32,7 +36,7 @@ const MovieCast = ({ id }) => {
                         alt={name}
                       />
                     )}
-                  </Link>
+                  </StyledLink>
                 </Td>
                 <Td>
                   <Link to={`/p/details/${id}`}>{name} </Link>

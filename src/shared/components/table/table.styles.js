@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const TBody = styled.div`
@@ -60,4 +61,8 @@ export const TableImg = styled.img`
   @media (max-width: 540px) {
     width: 50%;
   }
+`;
+
+export const StyledLink = styled(Link)`
+  width: 100%;
 `;
