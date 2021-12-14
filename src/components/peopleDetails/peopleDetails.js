@@ -3,12 +3,13 @@ import usePeopleDetailsQuery from "./services/usePeopleDetailsQuery";
 import DetailedInfo from "../../shared/components/detailedInfo";
 import PeopleInfo from "../../shared/components/detailedInfo/peopleInfo";
 import KnownFor from "./knownFor";
+import Spinner from "../../shared/components/spinner";
 import { DetailPage } from "../../shared/common/styles";
 const PeopleDetails = () => {
   const { id } = useParams();
   const { isLoading, data } = usePeopleDetailsQuery(id);
 
-  if (isLoading) return "Loading...";
+  if (isLoading) return <Spinner />;
   if (data.status_code) return <Navigate to="/404" />;
 
   const {

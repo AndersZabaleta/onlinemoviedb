@@ -3,11 +3,11 @@ import Table from "../../shared/components/table";
 
 import TableBody from "../../shared/components/table/tableBody";
 import TableTr from "../../shared/components/table/tableTr";
-
+import Spinner from "../../shared/components/spinner";
 import { TableWrapper } from "../../shared/common/styles";
 import { TableImg, Td } from "../../shared/components/table/table.styles";
 const MoviesKnownFor = ({ data, isLoading }) => {
-  if (isLoading) return "Loading...";
+  if (isLoading) return <Spinner />;
   return (
     <TableWrapper>
       <Table>

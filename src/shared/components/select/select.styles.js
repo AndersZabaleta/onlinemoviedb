@@ -11,5 +11,7 @@ export const DropdownWrapper = styled.div`
 export const DropDown = styled.select`
   width: 100%;
   border-radius: 10px;
-  height: 25px;
+  height: 28px;
+
+  padding-left: 6px;
 `;

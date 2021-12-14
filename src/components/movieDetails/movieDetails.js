@@ -3,12 +3,13 @@ import useMovieDetailsQuery from "./services/useMovieDetailsQuery";
 import MovieCast from "./movieCast";
 import DetailedInfo from "../../shared/components/detailedInfo";
 import MovieInfo from "../../shared/components/detailedInfo/movieInfo";
+import Spinner from "../../shared/components/spinner";
 import { DetailPage } from "../../shared/common/styles";
 const MovieDetails = () => {
   const { id } = useParams();
   const { isLoading, error, data } = useMovieDetailsQuery(id);
 
-  if (isLoading) return "Loading...";
+  if (isLoading) return <Spinner />;
   if (error) return "There was an error " + error.message;
   if (data.status_code) return <Navigate to="/404" />;
   const {

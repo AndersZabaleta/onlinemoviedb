@@ -2,6 +2,7 @@ import { useState } from "react";
 import useSearchQuery from "./services/useSearchQuery";
 import useDebounce from "../../hooks/useDebounce";
 import AutoComplete from "./autocomplete";
+import Spinner from "../spinner";
 import {
   StyledAutocompleteResults,
   AutocompleteImage,
@@ -35,22 +36,30 @@ const Input = () => {
           placeholder={`Search for movies`}
         />
       </InputContainer>
-      <AutoComplete isLoading={isLoading}>
-        {data === "Nothing was found"
-          ? "Nothing was found"
-          : data.map((movie) => {
-              return (
-                <StyledAutocompleteResults>
-                  <AutocompleteLink to={`/m/details/${movie.id}`}>
-                    <AutocompleteImage
-                      src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`}
-                      alt={movie.title}
-                    />
-                    {movie.title}
-                  </AutocompleteLink>
-                </StyledAutocompleteResults>
-              );
-            })}
+      <AutoComplete>
+        {data === "Nothing was found" ? (
+          <StyledAutocompleteResults>
+            Nothing was found
+          </StyledAutocompleteResults>
+        ) : isLoading ? (
+          <StyledAutocompleteResults>
+            <Spinner />
+          </StyledAutocompleteResults>
+        ) : (
+          data.map((movie) => {
+            return (
+              <StyledAutocompleteResults key={movie.id}>
+                <AutocompleteLink to={`/m/details/${movie.id}`}>
+                  <AutocompleteImage
+                    src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`}
+                    alt={movie.title}
+                  />
+                  {movie.title}
+                </AutocompleteLink>
+              </StyledAutocompleteResults>
+            );
+          })
+        )}
       </AutoComplete>
     </>
   );

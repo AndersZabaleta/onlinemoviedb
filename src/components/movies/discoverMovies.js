@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import Pagination from "../../shared/components/pagination";
 import usePopularQuery from "./services/useDiscoverQuery";
 import Card from "../../shared/components/card";
+import Spinner from "../../shared/components/spinner";
 import { MoviesContainer, MovieCardsContainer } from "./movies.styels";
 
 const NUMBER_OF_RESULTS = 20;
@@ -18,7 +19,7 @@ const DiscoverMovies = ({ genre, pageParams, sortByValue, genres }) => {
     genres
   );
   if (error) return "There was an error " + error.message;
-  if (isLoading) return "Loading...";
+  if (isLoading) return <Spinner />;
   const handlePage = (page) => {
     navigate(`/discover/genre=${genre}/sort_by=${sortByValue}/page/${page}`);
   };

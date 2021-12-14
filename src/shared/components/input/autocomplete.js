@@ -1,7 +1,6 @@
 import { StyledAutocomplete } from "./autocomplete.styles";
 
-const AutoComplete = ({ children, isLoading }) => {
-  if (isLoading) return <StyledAutocomplete>Loading...</StyledAutocomplete>;
+const AutoComplete = ({ children }) => {
   return <StyledAutocomplete>{children}</StyledAutocomplete>;
 };
 

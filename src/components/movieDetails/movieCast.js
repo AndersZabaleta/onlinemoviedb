@@ -4,11 +4,12 @@ import { TableWrapper } from "../../shared/common/styles";
 import { TableImg, Td } from "../../shared/components/table/table.styles";
 import TableBody from "../../shared/components/table/tableBody";
 import TableTr from "../../shared/components/table/tableTr";
+import Spinner from "../../shared/components/spinner";
 import { Link } from "react-router-dom";
 
 const MovieCast = ({ id }) => {
   const { isLoading, error, data } = useMovieCastQuery(id);
-  if (isLoading) return "Loading...";
+  if (isLoading) return <Spinner />;
   if (error) return "There was an error " + error.message;
 
   return (

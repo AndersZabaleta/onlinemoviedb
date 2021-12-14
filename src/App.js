@@ -1,6 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import Header from "./components/header";
+import Footer from "./components/footer";
+import Spinner from "./shared/components/spinner";
 import "./App.css";
 const Home = lazy(() => import("./components/home"));
 const Movies = lazy(() => import("./components/movies"));
@@ -17,7 +19,7 @@ const App = () => {
           exact
           path="/"
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Spinner />}>
               <Home />
             </Suspense>
           }
@@ -26,7 +28,7 @@ const App = () => {
           exact
           path="/discover/genre=:genre/sort_by=:sortValue/page/:page"
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Spinner />}>
               <Movies />
             </Suspense>
           }
@@ -36,7 +38,7 @@ const App = () => {
           exact
           path="/m/details/:id"
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Spinner />}>
               <MovieDetails />
             </Suspense>
           }
@@ -45,7 +47,7 @@ const App = () => {
           exact
           path="/p/details/:id"
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Spinner />}>
               <PeopleDetails />
             </Suspense>
           }
@@ -53,12 +55,13 @@ const App = () => {
         <Route
           path="*"
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Spinner />}>
               <NotFound />
             </Suspense>
           }
         />
       </Routes>
+      <Footer />
     </>
   );
 };
