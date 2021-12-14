@@ -6,6 +6,7 @@ export const HomeContainer = styled.div`
   align-items: center;
   justify-content: center;
   margin: 20px;
+  height: 100%;
 `;
 export const MovieCardsContainer = styled.div`
   display: flex;
