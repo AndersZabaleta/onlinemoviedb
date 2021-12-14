@@ -5,7 +5,9 @@ export const StyledPageButtonWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 80%;
+  padding-top: 40px;
   @media (max-width: 768px) {
+    width: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -15,6 +17,8 @@ export const StyledPageButtonWrapper = styled.div`
 export const StyledUl = styled.ul`
   list-style: none;
   display: flex;
+  margin: 20px 0px;
+  padding: 0;
 `;
 
 export const StyledButton = styled.button`
