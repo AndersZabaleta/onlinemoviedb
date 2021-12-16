@@ -11,6 +11,7 @@ export const InfoContainer = styled.div`
 export const PillsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 20px;
 `;
 
 export const AverageVotesContainer = styled.div`
