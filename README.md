@@ -6,7 +6,7 @@ Link to the web page [here](https://onlinemoviedb.herokuapp.com)
 
 ## Local configuration
 
-1. Get an API Key from [https://www.themoviedb.org/](TMDB)
+1. Get an API Key from [TMDB](https://www.themoviedb.org/)
 2. Create an .env file at the project root.
 3. Add the following lines to the file
 
