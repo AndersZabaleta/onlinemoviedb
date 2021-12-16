@@ -35,9 +35,10 @@ const Home = () => {
           );
         })}
       </MovieCardsContainer>
-      <Link to="/discover/genre=28/sort_by=popularity.desc/page/1">
-        <LinkButton>Discover movies</LinkButton>
-      </Link>
+
+      <LinkButton to="/discover/genre=28/sort_by=popularity.desc/page/1">
+        Discover movies
+      </LinkButton>
     </HomeContainer>
   );
 };
