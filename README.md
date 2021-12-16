@@ -2,7 +2,7 @@
 
 SPA for displaying content form TMDB API
 
-Link to the web page [https://onlinemoviedb.herokuapp.com](here)
+Link to the web page [here](https://onlinemoviedb.herokuapp.com)
 
 ## Local configuration
 
