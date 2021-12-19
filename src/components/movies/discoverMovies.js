@@ -11,13 +11,14 @@ const NUMBER_OF_RESULTS = 20;
 const DiscoverMovies = ({ genre, pageParams, sortByValue, genres }) => {
   const navigate = useNavigate();
 
-  const { isLoading, error, data, totalPages } = usePopularQuery(
+  const { isLoading, error, data } = usePopularQuery(
     genre,
     pageParams,
     sortByValue,
     NUMBER_OF_RESULTS,
     genres
   );
+
   if (error) return "There was an error " + error.message;
   if (isLoading) return <Spinner />;
   const handlePage = (page) => {
@@ -44,7 +45,6 @@ const DiscoverMovies = ({ genre, pageParams, sortByValue, genres }) => {
       <Pagination
         currentPage={parseInt(pageParams)}
         onClick={handlePage}
-        totalPages={totalPages}
         genre={genre}
         sortByValue={sortByValue}
       ></Pagination>

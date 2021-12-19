@@ -10,10 +10,11 @@ import {
 const Pagination = ({
   currentPage,
   onClick,
-  totalPages,
+
   sortByValue,
   genre,
 }) => {
+  const totalPages = 500;
   const lastPage = totalPages;
   const hasRightEllipsis = lastPage - currentPage > 3;
   const hasLeftEllipsis = currentPage > 3;

@@ -6,6 +6,7 @@ const getPopular = async (genre, page, sortByValue) =>
   ).then((res) => res.json());
 
 const mapData = (data, NUMBER_OF_RESULTS, genres) => {
+  console.log(data);
   const array = [];
   for (let i = 0; i < NUMBER_OF_RESULTS; i++) {
     array.push(data.results[i]);
@@ -42,12 +43,11 @@ const usePopularQuery = (
   } = useQuery(["popular", genre, page, sortByValue], () =>
     getPopular(genre, page, sortByValue)
   );
-  const totalPages = originalData?.total_pages;
 
   const data = originalData
     ? mapData(originalData, NUMBER_OF_RESULTS, genres)
     : [];
-  return { data, error, isLoading, totalPages };
+  return { data, error, isLoading };
 };
 
 export default usePopularQuery;
